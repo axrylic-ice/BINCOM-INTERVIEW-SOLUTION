@@ -65,8 +65,9 @@ def counter(lst):
 
 def mean_color(color):
     freq = counter(color)
-    # here "mean color" interpreted as most common
-    return max(freq, key=freq.get)
+    mean_val = sum(freq.values()) / len(freq)
+    # find color whose frequency is closest to the mean
+    return min(freq.items(), key=lambda x: abs(x[1] - mean_val))[0]
 
 def mode_color(color):
     # same as mean (mode is most frequent)
@@ -74,9 +75,12 @@ def mode_color(color):
     return max(freq, key=freq.get)
 
 def median_color(color):
-    sorted_colors = sorted(color,key=colors.get)
-    mid = len(sorted_colors) // 2
-    return sorted_colors[mid]
+    freq = sorted(counter(color).items(), key=lambda x: x[1])
+    mid = len(freq) // 2
+    if len(freq) % 2 == 1:
+        return freq[mid][0]
+    else:
+        return (freq[mid - 1][0], freq[mid][0])
 
 def variance(color):
     freq = list(counter(color).values())
@@ -126,7 +130,7 @@ def gen_rd_bin():
     binary = "".join(random.choice("01") for _ in range(4))
     decimal = int(binary, 2)
     return binary, decimal
- #      SUM FIRST 5 FIBONACCI NUMBERS
+ #      SUM FIRST 50 FIBONACCI NUMBERS
 def sum_fib(n=50):
     a, b = 0, 1
     total = 0
