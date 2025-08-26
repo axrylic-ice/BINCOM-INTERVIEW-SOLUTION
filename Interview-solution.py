@@ -114,19 +114,19 @@ def psgre(color):
         return " Saved to PostgreSQL"
     except Exception as e:
         return f" DB Error: {e}"
-
+ # CREATE A RECURSIVE SEARCH ALGORITHM
 def rec_search(lst, target, idx=0):
     if idx >= len(lst):
         return -1
     if lst[idx] == target:
         return idx
     return rec_search(lst, target, idx+1)
-
+ # GENERATE RANDOM 4 DIGIT BINARY NUMBERS AND CONVERT THEM TO BASE 10
 def gen_rd_bin():
     binary = "".join(random.choice("01") for _ in range(4))
     decimal = int(binary, 2)
     return binary, decimal
-
+ #      SUM FIRST 5 FIBONACCI NUMBERS
 def sum_fib(n=50):
     a, b = 0, 1
     total = 0
@@ -135,14 +135,7 @@ def sum_fib(n=50):
         a, b = b, a+b
     return total
 
-def sequence_transform(seq):
-    out = ""
-    for i in range(len(seq)-2):
-        if seq[i:i+3] == "111":
-            out += "1"
-        else:
-            out += "0"
-    return out
+
 
 #ANSWERS
 
@@ -157,8 +150,5 @@ binary, decimal = gen_rd_bin()
 print(f"Random binary: {binary}, Decimal: {decimal}")
 print("Sum of first 50 Fibonacci numbers:", sum_fib())
 
-seq = "0101101011101011011101101000111"
-print("Sequence input:", seq)
-print("Sequence output:", sequence_transform(seq))
 
 
