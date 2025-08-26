@@ -74,7 +74,7 @@ def mode_color(color):
     return max(freq, key=freq.get)
 
 def median_color(color):
-    sorted_colors = sorted(color)
+    sorted_colors = sorted(color,key=colors.get)
     mid = len(sorted_colors) // 2
     return sorted_colors[mid]
 
