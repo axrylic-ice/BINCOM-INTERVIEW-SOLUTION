@@ -8,6 +8,31 @@ html_doc = """<!DOCTYPE html>
 <head>
 <title>Our Python Class exam</title>
 </head>
+<style type="text/css">
+	
+	body{
+		width:1000px;
+		margin: auto;
+	}
+	table,tr,td{
+		border:solid;
+		padding: 5px;
+	}
+	table{
+		border-collapse: collapse;
+		width:100%;
+	}
+	h3{
+		font-size: 25px;
+		color:green;
+		text-align: center;
+		margin-top: 100px;
+	}
+	p{
+		font-size: 18px;
+		font-weight: bold;
+	}
+</style>
 <body>
 <h3>TABLE SHOWING COLOURS OF DRESS BY WORKERS AT BINCOM ICT FOR THE WEEK</h3>
 <table>
